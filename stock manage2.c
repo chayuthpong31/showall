@@ -73,15 +73,7 @@ void showall(info *rec){
 }
 
 void addData(info *data){
-    FILE *f = fopen("C:\\Users\\ASUS\\Desktop\\CPE100\\Project\\add.csv","w");
-    int i=0;
-    while(i<Arraysize(data)){
-        fprintf(f,"%s,%s,%s,%s,%d,%s,%d,%d\n",data->ID,data->ProductName
-        ,data->ProductType,data->DateIn,data->AmountIn,data->DateOut,
-        data->AmountOut,data->Remainning);
-        data++;
-        i++;
-    }
+    FILE *f = fopen("C:\\Users\\ASUS\\Desktop\\CPE100\\Project\\add.csv","a");
 
     printf("Enter ID: "); scanf("%s",data->ID);
     printf("Enter Product Name: "); scanf("%s",data->ProductName);
@@ -92,7 +84,7 @@ void addData(info *data){
     printf("Enter Amount Out: "); scanf("%d",&data->AmountOut);
     printf("Enter Remainning: "); scanf("%d",&data->Remainning);
 
-    fprintf(f,"%s,%s,%s,%s,%d,%s,%d,%d",data->ID,data->ProductName
+    fprintf(f,"%s,%s,%s,%s,%d,%s,%d,%d\n",data->ID,data->ProductName
         ,data->ProductType,data->DateIn,data->AmountIn,data->DateOut,
         data->AmountOut,data->Remainning);
         
